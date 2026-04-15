@@ -1,44 +1,83 @@
-# My Profile App
+# Tugas 4 - My Profile App with MVVM
 
 **Nama:** Muharyan Syaifullah  
 **NIM:** 123140045  
 **Mata Kuliah:** Pemrograman Aplikasi Mobile  
 
 ## Deskripsi
-My Profile App adalah aplikasi sederhana berbasis **Kotlin Multiplatform** dan **Compose Multiplatform** yang menampilkan halaman profil pribadi.  
-Aplikasi ini dibuat untuk memenuhi Tugas Praktikum Minggu 3 pada mata kuliah **Pemrograman Aplikasi Mobile**.
+Project ini merupakan pengembangan dari **My Profile App** pada tugas sebelumnya dengan menerapkan **State Management** dan **MVVM Pattern** menggunakan **Kotlin Multiplatform** dan **Compose Multiplatform**.
 
-## Fitur
-- Menampilkan foto/inisial profil dan nama
-- Menampilkan role atau deskripsi singkat
-- Menampilkan bio
-- Menampilkan informasi kontak:
+Pada tugas ini, aplikasi dikembangkan dengan fitur:
+- implementasi **MVVM** menggunakan `ProfileViewModel`
+- penggunaan **StateFlow** untuk mengelola UI state
+- fitur **Edit Profile** untuk mengubah nama dan bio
+- fitur **Dark Mode Toggle**
+- penerapan **state hoisting** pada komponen input
+
+## Fitur Utama
+- Menampilkan halaman profil
+- Menampilkan informasi:
+  - Nama
+  - Bio
   - Email
   - Phone
   - Location
-- Menggunakan komponen UI Compose seperti:
-  - Column
-  - Row
-  - Box
-  - Card
-  - Text
-  - Button
-  - Icon
+- Edit profil:
+  - Ubah nama
+  - Ubah bio
+  - Simpan perubahan ke `ViewModel`
+- Dark mode:
+  - Switch untuk mengubah tema light/dark
+- Arsitektur project:
+  - `data/`
+  - `ui/`
+  - `viewmodel/`
 
-## Reusable Composable
-Aplikasi ini menggunakan minimal 3 composable function yang reusable, yaitu:
-- `ProfileHeader`
-- `ProfileCard`
-- `InfoItem`
+## Implementasi MVVM
+Project ini menggunakan pola **Model - View - ViewModel**:
+
+### Model / Data
+Berisi data class yang digunakan oleh aplikasi, seperti:
+- `Profile`
+- `ProfileUiState`
+
+### View
+Berisi tampilan UI berbasis Compose, seperti:
+- `ProfileScreen`
+- `EditProfileForm`
+- komponen UI lainnya
+
+### ViewModel
+Berisi logika pengelolaan state aplikasi, seperti:
+- `ProfileViewModel`
+- update nama dan bio
+- pengaturan dark mode
+- expose state ke UI menggunakan `StateFlow`
+
+## State Management
+Project ini menerapkan konsep state management dari Compose:
+- `StateFlow` di `ViewModel`
+- `collectAsState()` di layer UI
+- state hoisting pada komponen input
+- reactive UI saat data berubah
 
 ## Teknologi yang Digunakan
 - Kotlin Multiplatform
 - Compose Multiplatform
 - Android Studio
+- StateFlow
+- MVVM Architecture
 
 ## Screenshot
-### Tampilan Aplikasi
-![Screenshot App](app.png)
+
+### Profile View
+![Profile View](profile-view.png)
+
+### Edit Form
+![Edit Form](edit-form.png)
+
+### Dark Mode
+![Dark Mode](dark-mode.png)
 
 ## Cara Menjalankan Project
 1. Clone repository ini
@@ -47,17 +86,10 @@ Aplikasi ini menggunakan minimal 3 composable function yang reusable, yaitu:
 4. Jalankan project pada emulator atau device
 5. Pastikan project dapat di-build tanpa error
 
-## Struktur Tampilan
-Aplikasi menampilkan:
-- Header profil
-- Bagian About Me
-- Bagian Contact Information
-- Tombol Contact Me
+## Struktur Folder
+Contoh struktur utama project:
 
-## Tujuan Pembuatan
-Project ini dibuat untuk memahami dasar-dasar **Compose Multiplatform**, terutama:
-- pembuatan UI deklaratif
-- penggunaan composable function
-- penggunaan layout dasar
-- penggunaan modifier
-- pembuatan komponen reusable
+```text
+data/
+ui/
+viewmodel/
