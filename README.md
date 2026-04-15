@@ -38,7 +38,7 @@ Aplikasi ini menggunakan minimal 3 composable function yang reusable, yaitu:
 
 ## Screenshot
 ### Tampilan Aplikasi
-![Screenshot App](screenshots/app.png)
+![Screenshot App](app.png)
 
 ## Cara Menjalankan Project
 1. Clone repository ini
