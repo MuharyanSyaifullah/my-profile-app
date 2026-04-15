@@ -1,35 +1,63 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# My Profile App
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+**Nama:** Muharyan Syaifullah  
+**NIM:** 123140045  
+**Mata Kuliah:** Pemrograman Aplikasi Mobile  
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+## Deskripsi
+My Profile App adalah aplikasi sederhana berbasis **Kotlin Multiplatform** dan **Compose Multiplatform** yang menampilkan halaman profil pribadi.  
+Aplikasi ini dibuat untuk memenuhi Tugas Praktikum Minggu 3 pada mata kuliah **Pemrograman Aplikasi Mobile**.
 
-### Build and Run Android Application
+## Fitur
+- Menampilkan foto/inisial profil dan nama
+- Menampilkan role atau deskripsi singkat
+- Menampilkan bio
+- Menampilkan informasi kontak:
+  - Email
+  - Phone
+  - Location
+- Menggunakan komponen UI Compose seperti:
+  - Column
+  - Row
+  - Box
+  - Card
+  - Text
+  - Button
+  - Icon
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+## Reusable Composable
+Aplikasi ini menggunakan minimal 3 composable function yang reusable, yaitu:
+- `ProfileHeader`
+- `ProfileCard`
+- `InfoItem`
 
-### Build and Run iOS Application
+## Teknologi yang Digunakan
+- Kotlin Multiplatform
+- Compose Multiplatform
+- Android Studio
 
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+## Screenshot
+### Tampilan Aplikasi
+![Screenshot App](screenshots/app.png)
 
----
+## Cara Menjalankan Project
+1. Clone repository ini
+2. Buka project di **Android Studio**
+3. Tunggu proses **Gradle Sync** selesai
+4. Jalankan project pada emulator atau device
+5. Pastikan project dapat di-build tanpa error
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## Struktur Tampilan
+Aplikasi menampilkan:
+- Header profil
+- Bagian About Me
+- Bagian Contact Information
+- Tombol Contact Me
+
+## Tujuan Pembuatan
+Project ini dibuat untuk memahami dasar-dasar **Compose Multiplatform**, terutama:
+- pembuatan UI deklaratif
+- penggunaan composable function
+- penggunaan layout dasar
+- penggunaan modifier
+- pembuatan komponen reusable
